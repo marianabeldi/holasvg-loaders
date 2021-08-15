@@ -1,10 +1,7 @@
 <template>
   <div>
     <client-only>
-      <h1>
-        <span class="home-link"><nuxt-link to="/">hola svg</nuxt-link></span
-        >Free Open SVG <span class="highlight">Loaders</span>
-      </h1>
+      <h1><span class="home-link"><a rel="noopener" href="https://holasvg.com/">hola svg</a></span>Free Open SVG <span class="highlight">Loaders</span></h1>
       <!-- <h2>Learn how to customize them <a rel="noopener" target="_blank" href="">here</a>.</h2> -->
       <main class="main-content">
         <aside class="styles-bar">
@@ -384,9 +381,7 @@ h2 a {
   .style-bar-box {
     border: 4px solid var(--borderColor);
     flex: 1 1 50%;
-    &.effects {
-      flex: 100%;
-    }
+    &.effects { flex: 100%; }
     &.active,
     &:hover,
     &:focus,
@@ -414,19 +409,13 @@ h2 a {
         background-color: var(--bgColor);
         display: none;
         margin-top: 0.5rem;
-        &.active {
-          display: flex;
-        }
+        &.active { display: flex; }
       }
     }
     .loop-container {
       margin: 0 0.7rem 0.8rem 0;
-      &:nth-child(5) {
-        margin-right: 0;
-      }
-      &:nth-child(6) {
-        display: none;
-      }
+      &:nth-child(5) { margin-right: 0; }
+      &:nth-child(6) { display: none; }
       &.active,
       &:hover,
       &:focus,
@@ -438,15 +427,11 @@ h2 a {
         }
       }
     }
-    &.effects > div > div {
-      margin: 0 1.2rem 0 0;
-    }
+    &.effects > div > div { margin: 0 1.2rem 0 0; }
   }
   label {
     margin: 0.8rem 0.8rem 0.8rem 0;
-    &.checkmark-container {
-      margin-right: 0;
-    }
+    &.checkmark-container { margin-right: 0; }
   }
   input[type="color"] {
     background-color: white;
@@ -456,14 +441,8 @@ h2 a {
     height: 3rem;
     -webkit-appearance: none;
   }
-  input[type="color"]::-webkit-color-swatch-wrapper {
-    // background-color: white;
-    padding: 0.05rem;
-  }
-  input[type="color"]::-webkit-color-swatch {
-    // background-color: white;
-    border: 0;
-  }
+  input[type="color"]::-webkit-color-swatch-wrapper { padding: 0.05rem; }
+  input[type="color"]::-webkit-color-swatch { border: 0; }
 }
 .code-generator {
   @media (min-width: 50em) /* 800px */ {
@@ -473,11 +452,8 @@ h2 a {
     grid-area: auto;
     display: flex;
     flex-direction: column;
-    max-height: 40vh;
-    div {
-      min-height: 200px;
-      // flex: 1 1 50%;
-    }
+    max-height: 50vh;
+    div { min-height: 200px; }
   }
   .code-svg,
   .code-styles {
@@ -487,6 +463,7 @@ h2 a {
     color: whitesmoke;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    max-height: 300px;
     overflow-x: auto;
     position: relative;
     text-align: left;
@@ -497,9 +474,7 @@ h2 a {
       padding: 0;
       white-space: pre-line;
     }
-    code {
-      white-space: pre-line;
-    }
+    code { white-space: pre-line; }
     .btn-download {
       position: sticky;
       bottom: 0;
@@ -511,9 +486,7 @@ h2 a {
       bottom: 0;
       left: 0;
       visibility: hidden;
-      &.smil-copy {
-        bottom: 37px;
-      }
+      &.smil-copy { bottom: 37px; }
     }
     &.active,
     &:hover,
@@ -525,9 +498,7 @@ h2 a {
       }
     }
   }
-  form {
-    display: inherit;
-  }
+  form { display: inherit; }
 }
 .btn-codepen {
   background-color: var(--bgColor);
@@ -535,9 +506,7 @@ h2 a {
   color: white;
   transition: all 0.4s;
   width: 100%;
-  &:hover {
-    background-color: var(--bgLighter);
-  }
+  &:hover { background-color: var(--bgLighter); }
   svg {
     fill: white;
     height: 20px;
@@ -550,9 +519,7 @@ h2 a {
   background-color: var(--siteRed);
   color: var(--textColor);
   transition: all 0.2s;
-  &:hover {
-    background-color: var(--siteOrange);
-  }
+  &:hover { background-color: var(--siteOrange); }
 }
 
 //animations
@@ -569,47 +536,40 @@ h2 a {
 //   }
 // }
 
-// #inline, #spinner {
+// .single-loader use {
 //   transform-box: fill-box;
-//   transform-origin: center;
+//   transform-origin: 0 0;
 // }
+@media (hover: none) and (pointer: coarse) {
+  .code-generator .code-svg .btn-copy, .code-generator .code-styles .btn-copy {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 @media (prefers-reduced-motion) {
-  .animation {
-    animation-name: dissolve;
-  }
+  .animation { animation-name: dissolve; }
 }
 </style>
 
 <style lang="scss">
 @keyframes opacityLoader {
-  to {
-    opacity: 0;
-  }
+  to { opacity: 0; }
 }
 @keyframes scaleLoader {
-  to {
-    transform: scale(1.2);
-  }
+  from {transform: scale(0)}
+  to { transform: scale(1.2); }
 }
 @keyframes translateLoader {
-  to {
-    transform: translateX(10px);
-  }
+  to { transform: translateX(10px); }
 }
 @keyframes rotateLoader {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 @keyframes skewLoader {
-  to {
-    transform: skewX(20deg);
-  }
+  to { transform: skewX(20deg); }
 }
 @keyframes matrixLoader {
-  to {
-    transform: matrix(1, 0, 1, 1, 100, 0);
-  }
+  to { transform: matrix(1, 0, 1, 1, 100, 0); }
 }
 </style>

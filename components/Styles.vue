@@ -8,6 +8,7 @@
         v-for="style in $state.styles"
         @click="setStyle(style.id)"
         :class="{ active: $state.styleActive === style.id }"
+        tabindex="0"
       >
         <svg
           v-html="style.svg"

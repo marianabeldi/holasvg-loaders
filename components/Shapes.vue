@@ -8,6 +8,7 @@
               v-for="shape in $state.shapes"
               @click="setShape(shape.id)"
               :class="{ active: $state.shapeActive === shape.id }"
+              tabindex="0"
             >
               <svg
                 v-html="shape.menu"

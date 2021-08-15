@@ -1,21 +1,22 @@
-exports.ids = [7];
+exports.ids = [8];
 exports.modules = {
 
-/***/ 48:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Styles.vue?vue&type=template&id=1a97c27a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"style-bar-box"},[_vm._ssrNode("<h3>Style:</h3> <div>"+(_vm._ssrList((_vm.$state.styles),function(style){return ("<div"+(_vm._ssrClass("loop-container style-option",{ active: _vm.$state.styleActive === style.id }))+"><svg width=\"50\" height=\"50\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" overflow=\"visible\" fill=\"#84c9d2\">"+(_vm._s(style.svg))+"</svg></div>")}))+"</div>")])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Styles.vue?vue&type=template&id=0cc6c59b&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"style-bar-box"},[_vm._ssrNode("<h3>Style:</h3> <div>"+(_vm._ssrList((_vm.$state.styles),function(style){return ("<div tabindex=\"0\""+(_vm._ssrClass("loop-container style-option",{ active: _vm.$state.styleActive === style.id }))+"><svg width=\"50\" height=\"50\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" overflow=\"visible\" fill=\"#84c9d2\">"+(_vm._s(style.svg))+"</svg></div>")}))+"</div>")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/Styles.vue?vue&type=template&id=1a97c27a&
+// CONCATENATED MODULE: ./components/Styles.vue?vue&type=template&id=0cc6c59b&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Styles.vue?vue&type=script&lang=js&
+//
 //
 //
 //

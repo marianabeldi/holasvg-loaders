@@ -137,7 +137,7 @@ const state = {
           {
             id: "scale",
             value: false,
-            keyframes: "@keyframes scaleLoader { to { transform: scale(1.2); } }",
+            keyframes: "@keyframes scaleLoader { from { transform: scale(0); } to { transform: scale(1.2); } }",
             sassSpinner: "1s $i * 0.08s scaleLoader infinite,",
             sassInline: "1s $i * 0.25s scaleLoader infinite,",
             css: "",

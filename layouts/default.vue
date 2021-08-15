@@ -2,7 +2,6 @@
   <div class="main-wrapper">
     <b class="top"></b>
     <Nuxt />
-    <Footer/>
   </div>
 </template>
 
@@ -32,7 +31,7 @@ export default {
   --textColor: #0E1A27;
 
 
-    --borderColor: #222831;
+  --borderColor: #222831;
   // --bgColor: #ffe3d4;
   --stripedColor: rgba(255,255,255,.7);
   // --siteRed: #FF5463;
