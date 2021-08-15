@@ -1,19 +1,19 @@
-# hola svg
+# hola svg loaders
 
-An SVG playground to share SVG stuff
+Free Custom SVG loaders
 
 ## Build Setup
 
 ```bash
 # install dependencies
-$ yarn
+$ npm i
 
 # serve with hot reload at localhost:3000
-$ yarn dev
+$ npm run dev
 
 # build for production
-$ yarn build
+$ npm run generate
 
 # generate static project
-$ yarn export
+$ npm run export
 ```
