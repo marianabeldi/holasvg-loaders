@@ -1,0 +1,26 @@
+{
+  "Footer": {
+    "description": "Auto imported from components/global/Footer.vue"
+  },
+  "Codes": {
+    "description": "Auto imported from components/Codes.vue"
+  },
+  "Effects": {
+    "description": "Auto imported from components/Effects.vue"
+  },
+  "FillColor": {
+    "description": "Auto imported from components/FillColor.vue"
+  },
+  "LoaderContainer": {
+    "description": "Auto imported from components/LoaderContainer.vue"
+  },
+  "Shapes": {
+    "description": "Auto imported from components/Shapes.vue"
+  },
+  "Share": {
+    "description": "Auto imported from components/Share.vue"
+  },
+  "Styles": {
+    "description": "Auto imported from components/Styles.vue"
+  }
+}
