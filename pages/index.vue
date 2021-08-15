@@ -445,6 +445,7 @@ h2 a {
   input[type="color"]::-webkit-color-swatch { border: 0; }
 }
 .code-generator {
+  overflow-x: hidden;
   @media (min-width: 50em) /* 800px */ {
     grid-area: 2/1/2/3;
   }
