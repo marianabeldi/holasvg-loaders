@@ -445,7 +445,9 @@ h2 a {
   input[type="color"]::-webkit-color-swatch { border: 0; }
 }
 .code-generator {
-  overflow-x: hidden;
+  @media (max-width: 40em) /* 800px */ {
+    overflow-x: hidden;
+  }
   @media (min-width: 50em) /* 800px */ {
     grid-area: 2/1/2/3;
   }
@@ -538,8 +540,9 @@ h2 a {
 // }
 
 // .single-loader use {
-//   transform-box: fill-box;
-//   transform-origin: 0 0;
+//   will-change: transform;
+//   // transform-box: fill-box;
+//   // transform-origin: 0 0;
 // }
 @media (hover: none) and (pointer: coarse) {
   .code-generator .code-svg .btn-copy, .code-generator .code-styles .btn-copy {
