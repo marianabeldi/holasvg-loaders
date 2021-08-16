@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import NuxtContent from './nuxt-content.dev'
+import NuxtContent from './nuxt-content'
 
 Vue.component(NuxtContent.name, NuxtContent)
 

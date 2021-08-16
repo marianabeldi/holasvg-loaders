@@ -3,7 +3,7 @@ import VueAnalytics from 'vue-analytics'
 
 export default async (ctx, inject) => {
   const runtimeConfig = ctx.$config && ctx.$config.googleAnalytics || {}
-  const moduleOptions = {"dev":true,"debug":{"sendHitTask":false},"id":"UA-174225123-1","autoTracking":{"pageviewTemplate":(route) => {
+  const moduleOptions = {"dev":true,"debug":{"sendHitTask":true},"id":"UA-174225123-1","autoTracking":{"pageviewTemplate":(route) => {
         return {
           page: route.path,
           title: window.document.title,
