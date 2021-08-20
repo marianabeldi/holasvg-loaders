@@ -26,7 +26,6 @@ export default {
       }
       this.$nextTick(() => {
         if (codeid === "SASS" && this.$state.styleActive === "spinner1") {
-        //   this.$state.stylesCode = this.$root.$el.children[0].children[0].children[1].children[1].children[2].children[0].children[0].children[0].innerHTML
             this.$state.stylesCode = this.$parent.$refs.stylesSpinner.innerHTML;
         }
         if (codeid === "SASS" && this.$state.styleActive === "inline1") {
