@@ -2218,14 +2218,14 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Footer: () => __webpack_require__.e(/* import() | components/footer */ 4).then(__webpack_require__.bind(null, 57)).then(c => wrapFunctional(c.default || c)),
-  Codes: () => __webpack_require__.e(/* import() | components/codes */ 1).then(__webpack_require__.bind(null, 44)).then(c => wrapFunctional(c.default || c)),
-  Effects: () => __webpack_require__.e(/* import() | components/effects */ 2).then(__webpack_require__.bind(null, 48)).then(c => wrapFunctional(c.default || c)),
-  FillColor: () => __webpack_require__.e(/* import() | components/fill-color */ 3).then(__webpack_require__.bind(null, 46)).then(c => wrapFunctional(c.default || c)),
-  LoaderContainer: () => __webpack_require__.e(/* import() | components/loader-container */ 5).then(__webpack_require__.bind(null, 49)).then(c => wrapFunctional(c.default || c)),
-  Shapes: () => __webpack_require__.e(/* import() | components/shapes */ 6).then(__webpack_require__.bind(null, 47)).then(c => wrapFunctional(c.default || c)),
-  Share: () => __webpack_require__.e(/* import() | components/share */ 7).then(__webpack_require__.bind(null, 50)).then(c => wrapFunctional(c.default || c)),
-  Styles: () => __webpack_require__.e(/* import() | components/styles */ 8).then(__webpack_require__.bind(null, 45)).then(c => wrapFunctional(c.default || c))
+  Footer: () => __webpack_require__.e(/* import() | components/footer */ 4).then(__webpack_require__.bind(null, 32)).then(c => wrapFunctional(c.default || c)),
+  Codes: () => __webpack_require__.e(/* import() | components/codes */ 1).then(__webpack_require__.bind(null, 47)).then(c => wrapFunctional(c.default || c)),
+  Effects: () => __webpack_require__.e(/* import() | components/effects */ 2).then(__webpack_require__.bind(null, 51)).then(c => wrapFunctional(c.default || c)),
+  FillColor: () => __webpack_require__.e(/* import() | components/fill-color */ 3).then(__webpack_require__.bind(null, 49)).then(c => wrapFunctional(c.default || c)),
+  LoaderContainer: () => __webpack_require__.e(/* import() | components/loader-container */ 5).then(__webpack_require__.bind(null, 52)).then(c => wrapFunctional(c.default || c)),
+  Shapes: () => __webpack_require__.e(/* import() | components/shapes */ 6).then(__webpack_require__.bind(null, 50)).then(c => wrapFunctional(c.default || c)),
+  Share: () => __webpack_require__.e(/* import() | components/share */ 7).then(__webpack_require__.bind(null, 53)).then(c => wrapFunctional(c.default || c)),
+  Styles: () => __webpack_require__.e(/* import() | components/styles */ 8).then(__webpack_require__.bind(null, 48)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

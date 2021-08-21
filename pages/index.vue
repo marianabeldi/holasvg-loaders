@@ -135,6 +135,7 @@
         </div>
       </main>
       <Share />
+      <Footer/>
     </client-only>
   </div>
 </template>

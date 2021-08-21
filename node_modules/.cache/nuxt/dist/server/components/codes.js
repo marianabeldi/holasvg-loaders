@@ -7,7 +7,7 @@ exports.modules = {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(32);
+var content = __webpack_require__(34);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,7 +19,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 31:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 32:
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -45,19 +45,19 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 44:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Codes.vue?vue&type=template&id=4737b190&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Codes.vue?vue&type=template&id=41d1d0d5&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"options-btn"},[_vm._ssrNode((_vm._ssrList((_vm.$state.codes),function(code){return ("<button"+(_vm._ssrClass("btn",{ active: _vm.$state.codeActive === code.id }))+">"+_vm._ssrEscape("\n    "+_vm._s(code.id)+"\n  ")+"</button>")})))])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/Codes.vue?vue&type=template&id=4737b190&
+// CONCATENATED MODULE: ./components/Codes.vue?vue&type=template&id=41d1d0d5&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Codes.vue?vue&type=script&lang=js&
 //
@@ -88,7 +88,6 @@ var staticRenderFns = []
 
       this.$nextTick(() => {
         if (codeid === "SASS" && this.$state.styleActive === "spinner1") {
-          //   this.$state.stylesCode = this.$root.$el.children[0].children[0].children[1].children[1].children[2].children[0].children[0].children[0].innerHTML
           this.$state.stylesCode = this.$parent.$refs.stylesSpinner.innerHTML;
         }
 
@@ -111,7 +110,7 @@ var componentNormalizer = __webpack_require__(2);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(31)
+  var style0 = __webpack_require__(33)
 if (style0.__inject__) style0.__inject__(context)
 
 }
