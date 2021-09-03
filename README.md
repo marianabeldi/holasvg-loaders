@@ -1,6 +1,6 @@
-# hola svg loaders
+# SVG Loading Generator - hola svg loaders
 
-SVG Loading Generator - Free Open SVG Loaders
+Free Open SVG Loaders
 
 ## Build Setup
 
