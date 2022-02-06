@@ -1,5 +1,5 @@
 {
-  "name": "holasvg",
+  "name": "holasvgloaders",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -25,11 +25,11 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "clipboard": "^2.0.8",
-    "node-sass": "^4.14.1",
     "nuxt": "2.15.6",
     "nuxt-highlightjs": "^1.0.1",
     "prism-themes": "1.4.0",
     "prismjs": "^1.24.1",
+    "sass": "^1.49.7",
     "sass-loader": "^9.0.2"
   },
   "devDependencies": {

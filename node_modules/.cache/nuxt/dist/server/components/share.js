@@ -38,7 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".feedback{border:1px solid;border-radius:2px;color:var(--siteBlue);display:inline-block;margin-top:2rem;margin-bottom:2rem;padding:.5rem 1rem;text-decoration:none}.feedback:hover{color:var(--siteOrange)}.share-twitter{color:var(--textColor);display:inline-block;font-weight:900;position:absolute;top:1em;right:1em;text-decoration:none}.share-twitter svg{fill:var(--siteGreen);height:1.5rem;transition:transform .2s;vertical-align:text-bottom;width:1.5rem}.share-twitter:hover{color:var(--siteOrange);text-decoration:none}.share-twitter:hover svg{fill:var(--siteBlue);transform:translate(1.2em,-2.5em)}@media (max-width:40em){.mobile-none{display:none}}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".feedback{border:1px solid;border-radius:2px;color:var(--siteBlue);display:inline-block;margin-top:2rem;margin-bottom:2rem;padding:.5rem 1rem;text-decoration:none}.feedback:hover{color:var(--siteOrange)}.share-twitter{color:var(--textColor);display:inline-block;font-weight:900;position:absolute;top:1em;right:1em;text-decoration:none}.share-twitter svg{fill:var(--siteGreen);height:1.5rem;transition:transform .2s;vertical-align:text-bottom;width:1.5rem}.share-twitter:hover{color:var(--siteOrange);text-decoration:none}.share-twitter:hover svg{fill:var(--siteBlue);transform:translate(1.2em,-2.5em)}@media(max-width:40em){.mobile-none{display:none}}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -81,7 +81,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "7b231cb8"
+  "e91002a8"
   
 )
 

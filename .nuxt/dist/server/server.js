@@ -1426,7 +1426,7 @@ var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vu
 
 
 
-const _5c91941e = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 9).then(__webpack_require__.bind(null, 58)));
+const _2732e8a2 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 9).then(__webpack_require__.bind(null, 58)));
 
 const emptyFn = () => {};
 
@@ -1439,7 +1439,7 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/",
-    component: _5c91941e,
+    component: _2732e8a2,
     name: "index"
   }],
   fallback: false
@@ -1585,7 +1585,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "2cf9a837"
+  "5060747a"
   
 )
 
@@ -1889,7 +1889,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "4b8773ab"
+  "cd674392"
   
 )
 
@@ -1942,7 +1942,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "6a0f88f9"
+  "f946cef6"
   
 )
 
@@ -2732,7 +2732,7 @@ async function createApp(ssrContext, config = {}) {
 
   const app = {
     head: {
-      "title": "hola svg",
+      "title": "hola svg loaders",
       "meta": [{
         "charset": "utf-8"
       }, {
@@ -2750,7 +2750,7 @@ async function createApp(ssrContext, config = {}) {
       }, {
         "hid": "description",
         "name": "description",
-        "content": "Free Open SVG Loaders"
+        "content": ""
       }],
       "link": [{
         "rel": "icon",

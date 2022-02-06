@@ -12,10 +12,10 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_05a0ccac from 'nuxt_plugin_plugin_05a0ccac' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_pluginclient_50988026 from 'nuxt_plugin_pluginclient_50988026' // Source: ./content/plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_935c1ca4 from 'nuxt_plugin_pluginserver_935c1ca4' // Source: ./content/plugin.server.js (mode: 'server')
-import nuxt_plugin_googleanalytics_4e720c66 from 'nuxt_plugin_googleanalytics_4e720c66' // Source: ./google-analytics.js (mode: 'client')
+import nuxt_plugin_plugin_35cb0aa6 from 'nuxt_plugin_plugin_35cb0aa6' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_pluginclient_0849d9bc from 'nuxt_plugin_pluginclient_0849d9bc' // Source: ./content/plugin.client.js (mode: 'client')
+import nuxt_plugin_pluginserver_619484aa from 'nuxt_plugin_pluginserver_619484aa' // Source: ./content/plugin.server.js (mode: 'server')
+import nuxt_plugin_googleanalytics_5732e82c from 'nuxt_plugin_googleanalytics_5732e82c' // Source: ./google-analytics.js (mode: 'client')
 import nuxt_plugin_globalObject_a43db082 from 'nuxt_plugin_globalObject_a43db082' // Source: ../plugins/globalObject.js (mode: 'all')
 import nuxt_plugin_prism_33c55cea from 'nuxt_plugin_prism_33c55cea' // Source: ../plugins/prism (mode: 'client')
 
@@ -65,7 +65,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"hola svg","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"msapplication-TileColor","content":"#ffffff"},{"name":"msapplication-TileImage","content":"\u002Fms-icon-144x144.png"},{"name":"theme-color","content":"#ffffff"},{"hid":"description","name":"description","content":"Free Open SVG Loaders"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"apple-touch-icon","sizes":"57x57","href":"\u002Fapple-icon-57x57.png"},{"rel":"apple-touch-icon","sizes":"60x60","href":"\u002Fapple-icon-60x60.png"},{"rel":"apple-touch-icon","sizes":"72x72","href":"\u002Fapple-icon-72x72.png"},{"rel":"apple-touch-icon","sizes":"76x76","href":"\u002Fapple-icon-76x76.png"},{"rel":"apple-touch-icon","sizes":"114x114","href":"\u002Fapple-icon-114x114.png"},{"rel":"apple-touch-icon","sizes":"120x120","href":"\u002Fapple-icon-120x120.png"},{"rel":"apple-touch-icon","sizes":"144x144","href":"\u002Fapple-icon-144x144.png"},{"rel":"apple-touch-icon","sizes":"152x152","href":"\u002Fapple-icon-152x152.png"},{"rel":"apple-touch-icon","sizes":"180x180","href":"\u002Fapple-icon-180x180.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"192x192","href":"\u002Fandroid-icon-192x192.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"96x96","href":"\u002Ffavicon-96x96.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"32x32","href":"\u002Ffavicon-32x32.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"16x16","href":"\u002Ffavicon-16x16.png"},{"rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":true},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Montserrat:wght@400;500;900"}],"bodyAttrs":{},"style":[],"script":[]},
+    head: {"title":"hola svg loaders","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"msapplication-TileColor","content":"#ffffff"},{"name":"msapplication-TileImage","content":"\u002Fms-icon-144x144.png"},{"name":"theme-color","content":"#ffffff"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"apple-touch-icon","sizes":"57x57","href":"\u002Fapple-icon-57x57.png"},{"rel":"apple-touch-icon","sizes":"60x60","href":"\u002Fapple-icon-60x60.png"},{"rel":"apple-touch-icon","sizes":"72x72","href":"\u002Fapple-icon-72x72.png"},{"rel":"apple-touch-icon","sizes":"76x76","href":"\u002Fapple-icon-76x76.png"},{"rel":"apple-touch-icon","sizes":"114x114","href":"\u002Fapple-icon-114x114.png"},{"rel":"apple-touch-icon","sizes":"120x120","href":"\u002Fapple-icon-120x120.png"},{"rel":"apple-touch-icon","sizes":"144x144","href":"\u002Fapple-icon-144x144.png"},{"rel":"apple-touch-icon","sizes":"152x152","href":"\u002Fapple-icon-152x152.png"},{"rel":"apple-touch-icon","sizes":"180x180","href":"\u002Fapple-icon-180x180.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"192x192","href":"\u002Fandroid-icon-192x192.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"96x96","href":"\u002Ffavicon-96x96.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"32x32","href":"\u002Ffavicon-32x32.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"16x16","href":"\u002Ffavicon-16x16.png"},{"rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":true},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Montserrat:wght@400;500;900"}],"bodyAttrs":{},"style":[],"script":[]},
 
     router,
     nuxt: {
@@ -159,20 +159,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_05a0ccac === 'function') {
-    await nuxt_plugin_plugin_05a0ccac(app.context, inject)
+  if (typeof nuxt_plugin_plugin_35cb0aa6 === 'function') {
+    await nuxt_plugin_plugin_35cb0aa6(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_pluginclient_50988026 === 'function') {
-    await nuxt_plugin_pluginclient_50988026(app.context, inject)
+  if (process.client && typeof nuxt_plugin_pluginclient_0849d9bc === 'function') {
+    await nuxt_plugin_pluginclient_0849d9bc(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_pluginserver_935c1ca4 === 'function') {
-    await nuxt_plugin_pluginserver_935c1ca4(app.context, inject)
+  if (process.server && typeof nuxt_plugin_pluginserver_619484aa === 'function') {
+    await nuxt_plugin_pluginserver_619484aa(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_googleanalytics_4e720c66 === 'function') {
-    await nuxt_plugin_googleanalytics_4e720c66(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googleanalytics_5732e82c === 'function') {
+    await nuxt_plugin_googleanalytics_5732e82c(app.context, inject)
   }
 
   if (typeof nuxt_plugin_globalObject_a43db082 === 'function') {
