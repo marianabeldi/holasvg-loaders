@@ -56,10 +56,9 @@ footer {
       &:hover { 
           fill: var(--siteRed); 
           .liquid { fill: #FD0;}
-          .cafe-tooltip { display: block;}
         }
     }
   }
-  .cafe-tooltip { display: none;}
+  .cafe-tooltip:hover rect { fill: black; }
 }
 </style>
