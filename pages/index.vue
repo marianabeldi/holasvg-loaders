@@ -2,7 +2,7 @@
   <div>
     <client-only>
       <h1><span class="home-link"><a rel="noopener" target="_PARENT" href="https://holasvg.com/">hola svg</a></span>Free Open SVG <span class="highlight">Loaders</span></h1>
-      <h2>Some notes about SMIL and Saas <a rel="noopener" target="_blank" href="https://css-tricks.com/how-i-made-a-generator-for-svg-loaders-with-sass-and-smil-options/">here</a>.</h2>
+      <h2>Some notes about SMIL and Saas <a rel="noopener" href="https://css-tricks.com/how-i-made-a-generator-for-svg-loaders-with-sass-and-smil-options/">here</a>. <br>Some examples to integrate the loaders in your project <a rel="noopener" href="https://codepen.io/collection/kNBbaP">here</a>.</h2>
       <main class="main-content">
         <aside class="styles-bar">
           <Codes />
