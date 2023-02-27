@@ -2824,8 +2824,12 @@ async function createApp(ssrContext, config = {}) {
         "href": "https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Montserrat:wght@400;500;900"
       }],
       "bodyAttrs": {},
-      "style": [],
-      "script": []
+      "script": [{
+        "src": "https:\u002F\u002Fpagead2.googlesyndication.com\u002Fpagead\u002Fjs\u002Fadsbygoogle.js",
+        "data-ad-client": "ca-pub-6891714364460101",
+        "async": true
+      }],
+      "style": []
     },
     router,
     nuxt: {

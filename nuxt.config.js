@@ -45,7 +45,14 @@ export default {
       // { rel: 'manifest', href: "/manifest.json" }
     ],
     bodyAttrs: {
-    }
+    },
+    script: [
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'data-ad-client': 'ca-pub-6891714364460101',
+        async: true
+      }
+    ]
   },
   /*
    ** Global CSS
