@@ -17,7 +17,7 @@
           <template v-if="!$state.loaderSmilActive">
             <div class="code-svg">
               <pre>
-                <code class="language-xml">&#x3C;svg width=&#x22;100&#x22; height=&#x22;100&#x22; xmlns=&#x22;http://www.w3.org/2000/svg&#x22; viewBox=&#x22;0 0 100 100&#x22; overflow=&#x22;visible&#x22; fill="{{ $state.fillValue }}"&#x3E;
+                <code class="language-xml">&#x3C;svg width=&#x22;100&#x22; height=&#x22;100&#x22; xmlns=&#x22;http://www.w3.org/2000/svg&#x22; viewBox=&#x22;0 0 100 100&#x22; overflow=&#x22;visible&#x22; fill="{{ $state.fillColor }}" stroke="{{ $state.strokeColor }}" &#x3E;
                     &#x3C;defs&#x3E;
                       {{ $state.loaderCurrentDef }}
                     &#x3C;/defs&#x3E;  
@@ -36,9 +36,9 @@
           </template>
           <template v-if="$state.loaderSmilActive">
             <div class="code-svg">
-              <!-- <prism lang="xml"></prism> -->
+              <!-- <prism lang="css"></prism> -->
               <pre>
-                  <code class="language-xml" ref="svgDownload">&#x3C;svg xmlns=&#x22;http://www.w3.org/2000/svg&#x22; viewBox=&#x22;0 0 100 100&#x22; overflow=&#x22;visible&#x22; fill="{{ $state.fillValue }}"&#x3E;
+                  <code class="language-xml" ref="svgDownload">&#x3C;svg xmlns=&#x22;http://www.w3.org/2000/svg&#x22; viewBox=&#x22;0 0 100 100&#x22; overflow=&#x22;visible&#x22; fill="{{ $state.fillColor }}" stroke="{{ $state.strokeColor }}"&#x3E;
                       {{ $state.loaderSmil }} 
                     &#x3C;/svg&#x3E;
                   </code>
@@ -141,11 +141,13 @@
 </template>
 
 <script>
+import Prism from '~/plugins/prism'
+
 export default {
   head() {
     return {
       bodyAttrs: { class: "loaders-page" },
-      title: "Hola SVG Loaders",
+      title: "Hola SVG Loaders - Free SVG Loader Generator",
       meta: [
         { name: "title", content: "Hola SVG Loaders - Free SVG Loading Generator" },
         { name: "description", content: "Free SVG Loader Generator" },
@@ -169,7 +171,8 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { //Prism.highlightAll() 
+  },
   methods: {
     loaderURL() {
       const DOMURL = self.URL || self.webkitURL || self;
@@ -213,7 +216,7 @@ export default {
       var smilcodepre = this.$state.loaderSmil;
       var fullsmillcode =
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" overflow="visible" fill="' +
-        this.$state.fillColor +
+        this.$state.fillColor + '" stroke="' +  this.$state.strokeColor +
         '">' +
         smilcodepre +
         "</svg>";
@@ -226,7 +229,7 @@ export default {
       var sasscodepre = this.$state.loaderCurrent;
       var fullsasscode =
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" overflow="visible" fill="' +
-        this.$state.fillColor +
+        this.$state.fillColor + '" stroke="' +  this.$state.strokeColor +
         '">' +
         "<defs>" +
         sasscodepredef +
@@ -273,7 +276,7 @@ export default {
       var smilcodepre = this.$state.loaderSmil;
       var codepenhtml =
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" overflow="visible" fill="' +
-        this.$state.fillColor +
+        this.$state.fillColor + '" stroke="' +  this.$state.strokeColor +
         '">' +
         smilcodepre +
         "</svg>";
@@ -291,7 +294,7 @@ export default {
       var sasscodepre = this.$state.loaderCurrent;
       var codepenhtml =
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" overflow="visible" fill="' +
-        this.$state.fillColor +
+        this.$state.fillColor + '" stroke="' +  this.$state.strokeColor +
         '">' +
         "<defs>" +
         sasscodepredef +
@@ -402,6 +405,7 @@ h2 a {
       display: flex;
       flex-wrap: wrap;
       margin: 1rem 1rem 0.2rem;
+      &.flex-btw { justify-content: space-between;}
       svg {
         border-radius: 2px;
         fill: hsl(32, 100, 96);

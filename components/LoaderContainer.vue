@@ -19,7 +19,7 @@
         viewBox="0 0 100 100"
         overflow="visible"
         :fill="$state.fillColor"
-        :stroke="$state.fillColor"
+        :stroke="$state.strokeColor"
         v-show="$state.renderComponent"
       >
         <defs>
@@ -130,6 +130,7 @@
         viewBox="0 0 100 100"
         overflow="visible"
         :fill="$state.fillColor"
+        :stroke="$state.strokeColor"
         v-show="$state.renderComponent"
       >
         <defs>

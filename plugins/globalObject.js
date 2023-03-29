@@ -8,7 +8,7 @@ const state = {
         codepenvalue: {},
         copyText: "Copy",
         fillColor: "#ff5463",
-        fillValue: "#ff5463",
+        strokeColor: "none",
         effectActive: ["opacity"],
         computedAnimationBoth: [["1s 0.08s opacityLoader infinite"], ["1s 0.16s opacityLoader infinite"], ["1s 0.24s opacityLoader infinite"], ["1s 0.32s opacityLoader infinite"], ["1s 0.4s opacityLoader infinite"], ["1s 0.48s opacityLoader infinite"], ["1s 0.56s opacityLoader infinite"], ["1s 0.64s opacityLoader infinite"], ["1s 0.72s opacityLoader infinite"], ["1s 0.8s opacityLoader infinite"], ["1s 0.88s opacityLoader infinite"], ["1s 0.96s opacityLoader infinite"], ],
         loaderSassSpinner: ["1s $i * 0.08s opacityLoader infinite,"],

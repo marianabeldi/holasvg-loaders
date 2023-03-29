@@ -1,21 +1,15 @@
 (function (Prism) {
 	Prism.languages.latte = {
 		'comment': /^\{\*[\s\S]*/,
-		'ld': {
-			pattern: /^\{(?:[=_]|\/?(?!\d|\w+\()\w+)?/,
-			inside: {
-				'punctuation': /^\{\/?/,
-				'tag': {
-					pattern: /.+/,
-					alias: 'important'
-				}
-			}
+		'latte-tag': {
+			// https://latte.nette.org/en/tags
+			pattern: /(^\{(?:\/(?=[a-z]))?)(?:[=_]|[a-z]\w*\b(?!\())/i,
+			lookbehind: true,
+			alias: 'important'
 		},
-		'rd': {
-			pattern: /\}$/,
-			inside: {
-				'punctuation': /.+/
-			}
+		'delimiter': {
+			pattern: /^\{\/?|\}$/,
+			alias: 'punctuation'
 		},
 		'php': {
 			pattern: /\S(?:[\s\S]*\S)?/,
@@ -57,7 +51,7 @@
 		if (env.language !== 'latte') {
 			return;
 		}
-		var lattePattern = /\{\*[\s\S]*?\*\}|\{[^'"\s{}*](?:[^"'/{}]|\/(?![*/])|("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|\/\*(?:[^*]|\*(?!\/))*\*\/)*?\}/g;
+		var lattePattern = /\{\*[\s\S]*?\*\}|\{[^'"\s{}*](?:[^"'/{}]|\/(?![*/])|("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|\/\*(?:[^*]|\*(?!\/))*\*\/)*\}/g;
 		Prism.languages['markup-templating'].buildPlaceholders(env, 'latte', lattePattern);
 		env.grammar = markupLatte;
 	});
