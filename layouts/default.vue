@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      headerText: "Version 1.2 is out ✨",
+      headerText: "Version 1.2 is here! ✨",
     }
   }
 }
@@ -50,9 +50,11 @@ html {
   box-sizing: border-box;
 }
 .top {
-  background-color: var(--siteLightblue);
+  background-color: var(--siteGreen);
   border-bottom: 1px solid var(--borderColor);
   color: var(--bgColor);
+  font-size: .9rem;
+  letter-spacing: 0.08em;
   width: 100%;
 }
 body {

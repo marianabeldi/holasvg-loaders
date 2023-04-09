@@ -40,37 +40,39 @@
 <script>
 export default {
     methods: {
-        setShape(shapeid) {
+      setShape(shapeid) {
         this.$state.shapeActive = shapeid;
         for (let i = 0; i < this.$state.shapes.length; i++) {
-            if (this.$state.shapes[i].id === shapeid) {
+          if (this.$state.shapes[i].id === shapeid) {
             this.$state.loaderCurrentDef = this.$state.shapes[i].svgspinner;
             if (this.$state.styleActive === "inline1") {
-                this.$state.loaderCurrentDef = this.$state.shapes[i].svginline;
+              this.$state.loaderCurrentDef = this.$state.shapes[i].svginline;
             }
             if (shapeid === "custom") {
-                const shapes = ["<path", "<text", "<svg", "<rect", "<circle", "<polyline", "<ellipse", "<line", "<polygon"];
-                const customShape = this.$state.customShape;
-
+              const shapes = ["<path", "<text", "<svg", "<rect", "<circle", "<polyline", "<ellipse", "<line", "<polygon"];
+              let customShape = this.$state.customShape;
+              const idAlreadyAdded = this.$state.idAlreadyAdded || /\bid="loader"\b/.test(customShape);
+              if (!idAlreadyAdded) {
                 for (const shape of shapes) {
                   const regex = new RegExp(`^${shape}`);
-                  
+
                   if (regex.test(customShape)) {
-                    this.$state.customShape = customShape.replace(regex, `${shape} id="loader"`);
+                    customShape = customShape.replace(regex, `${shape} id="loader"`);
                     break; // stop checking once a match is found
                   }
                 }
-                this.$state.loaderCurrentDef = this.$state.customShape;
-
+                this.$state.customShape = customShape;
+                this.$state.loaderCurrentDef = customShape;
+                this.$state.idAlreadyAdded = true;
+              }
             }
           }
         }
         this.$state.renderComponent = false;
         this.$nextTick(() => {
-            this.$state.renderComponent = true;
+          this.$state.renderComponent = true;
         });
-        // this.$getSmilCode();
-        },
+      },
         disabledOp() {
             if (
                 this.$state.customShape.startsWith("<path") ||

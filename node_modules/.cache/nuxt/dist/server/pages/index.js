@@ -648,12 +648,12 @@ var component = Object(componentNormalizer["a" /* default */])(
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Shapes.vue?vue&type=template&id=719ec90e&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Shapes.vue?vue&type=template&id=76202591&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"style-bar-box"},[_vm._ssrNode("<h3>Shapes:</h3> <div>"+(_vm._ssrList((_vm.$state.shapes),function(shape){return ("<div tabindex=\"0\""+(_vm._ssrClass("loop-container shape-option",{ active: _vm.$state.shapeActive === shape.id }))+"><svg width=\"50\" height=\"50\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" overflow=\"visible\" fill=\"#84c9d2\">"+(_vm._s(shape.menu))+"</svg></div>")}))+" <button class=\"btn btn-custom\">Custom</button> <textarea placeholder=\"paste your svg! or shape, <path> or <text>..\" title=\"💡 TRY: <text y=\"20\">💩</text>\" required=\"required\""+(_vm._ssrClass("custom-shape",{ active: _vm.$state.isActiveCustom }))+">"+_vm._ssrEscape(_vm._s(_vm.$state.customShape))+"</textarea> <button type=\"submit\""+(_vm._ssrAttr("disabled",_vm.$state.disabledSave))+(_vm._ssrClass("btn custom-shape-btn",{ active: _vm.$state.isActiveCustom }))+">Save</button></div>")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/Shapes.vue?vue&type=template&id=719ec90e&
+// CONCATENATED MODULE: ./components/Shapes.vue?vue&type=template&id=76202591&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Shapes.vue?vue&type=script&lang=js&
 //
@@ -710,18 +710,23 @@ var staticRenderFns = []
 
           if (shapeid === "custom") {
             const shapes = ["<path", "<text", "<svg", "<rect", "<circle", "<polyline", "<ellipse", "<line", "<polygon"];
-            const customShape = this.$state.customShape;
+            let customShape = this.$state.customShape;
+            const idAlreadyAdded = this.$state.idAlreadyAdded || /\bid="loader"\b/.test(customShape);
 
-            for (const shape of shapes) {
-              const regex = new RegExp(`^${shape}`);
+            if (!idAlreadyAdded) {
+              for (const shape of shapes) {
+                const regex = new RegExp(`^${shape}`);
 
-              if (regex.test(customShape)) {
-                this.$state.customShape = customShape.replace(regex, `${shape} id="loader"`);
-                break; // stop checking once a match is found
+                if (regex.test(customShape)) {
+                  customShape = customShape.replace(regex, `${shape} id="loader"`);
+                  break; // stop checking once a match is found
+                }
               }
-            }
 
-            this.$state.loaderCurrentDef = this.$state.customShape;
+              this.$state.customShape = customShape;
+              this.$state.loaderCurrentDef = customShape;
+              this.$state.idAlreadyAdded = true;
+            }
           }
         }
       }
@@ -729,7 +734,7 @@ var staticRenderFns = []
       this.$state.renderComponent = false;
       this.$nextTick(() => {
         this.$state.renderComponent = true;
-      }); // this.$getSmilCode();
+      });
     },
 
     disabledOp() {
