@@ -20,17 +20,22 @@ export default {
       this.$state.codeActive = codeid;
       if (codeid === "SMIL") {
         this.$state.loaderSmilActive = true
+
+        this.$loaderCurrentFunction();
+
+        this.$loaderSmilFunction();
+
       }
       else {
         this.$state.loaderSmilActive = false;
       }
       this.$nextTick(() => {
-        if (codeid === "SASS" && this.$state.styleActive === "spinner1") {
-            this.$state.stylesCode = this.$parent.$refs.stylesSpinner.innerHTML;
+        if (codeid === "SASS") {
+            this.$state.stylesCode = this.$parent.$refs.stylesLoaderSass.innerHTML;
         }
-        if (codeid === "SASS" && this.$state.styleActive === "inline1") {
-          this.$state.stylesCode = this.$parent.$refs.stylesInline.innerHTML
-        }
+        // if (codeid === "SASS" && this.$state.styleActive === "inline1") {
+        //   this.$state.stylesCode = this.$parent.$refs.stylesInline.innerHTML
+        // }
        });
     },
   }

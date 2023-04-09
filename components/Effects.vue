@@ -4,7 +4,7 @@
         <div>
             <div v-bind:key="effect.id" v-for="effect in $state.effects">
                 <label class="checkmark-container" :for="effect.id">
-                <input :ref="effect.id" type="checkbox" @change="setEffect(effect.id)" :checked="effect.value"/>
+                <input :ref="effect.id" type="checkbox" @change="$setEffect(effect.id)" :checked="effect.value"/>
                 <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
                     <rect class="checkmark-bg" x="1" y="1" width="30" height="30" stroke="currentColor" fill="none" stroke-width="1" rx="2" ry="2" />
                     <polyline class="checkmark" points="8,17 14,23 25,8" stroke="transparent" stroke-linejoin="round" stroke-linecap="round" stroke-width="4" fill="none"/>
@@ -27,63 +27,7 @@
     </div>
 </template>
 
-<script>
-export default {
-    methods: {
-    setEffect(effectid) {
-      if (this.$state.effectActive.includes(effectid)) {
-        for (let i = 0; i < this.$state.effectActive.length; i++) {
-          if (effectid === this.$state.effectActive[i]) {
-            this.$state.effectActive.splice(i, 1);
-            this.$state.loaderSassSpinner.splice(i, 1)
-            this.$state.loaderSassInline.splice(i, 1)
-            this.$state.keyframesEffects.splice(i, 1)
-            for (let ef = 0; ef < this.$state.computedAnimationBoth.length; ef++) {
-              for (let efe = 0; efe < this.$state.computedAnimationBoth[ef].length; efe++) {
-                if(this.$state.computedAnimationBoth[ef][efe].includes(`${effectid}Loader`)) {
-                    this.$state.computedAnimationBoth[ef].splice(efe, 1);
-                }
-              }
-            }
-          }
-        }
-      } else {
-        this.$state.effectActive.push(effectid)
-        this.$state.effects.forEach(function (obj, i) {
-          if (effectid === obj.id) {
-            this.$state.loaderSassSpinner.push(obj.sassSpinner);
-            this.$state.loaderSassInline.push(obj.sassInline);
-            this.$state.keyframesEffects.push(obj.keyframes);
-            for (let ee = 1; ee < this.$state.itemsNumer; ee++) {
-                if (this.$state.styleActive === "inline1") {
-                    this.$state.computedAnimationBoth[ee-1].push(`1s ${(ee * 0.25)}s ${effectid}Loader infinite`)
-                }
-                if (this.$state.styleActive === "spinner1") {
-                    this.$state.computedAnimationBoth[ee-1].push(`1s ${(ee * 0.08)}s ${effectid}Loader infinite`)
-                }
-            }
-          }
-        }, this);
-      }
-      if (this.$state.codeActive === "SASS") {
-        var codeActiveReset = this.$state.codeActive
-        this.$state.codeActive = ''
-      }
-      this.$nextTick(() => {
-        if (this.$state.styleActive === "inline1" && codeActiveReset === "SASS") {
-          this.$state.stylesCode = this.$parent.$refs.stylesInline.innerHTML
-          this.$state.codeActive = codeActiveReset
-        }
-        if (this.$state.styleActive === "spinner1" && codeActiveReset === "SASS") {
-          this.$state.stylesCode = this.$parent.$refs.stylesSpinner.innerHTML
-          this.$state.codeActive = codeActiveReset
-        }
-      });
-      this.$getSmilCode();
-    },
-  }
-}
-</script>
+
 
 <style lang="scss">
 .checkmark-container {

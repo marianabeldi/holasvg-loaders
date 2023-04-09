@@ -39,7 +39,10 @@
               <!-- <prism lang="css"></prism> -->
               <pre>
                   <code class="language-xml" ref="svgDownload">&#x3C;svg xmlns=&#x22;http://www.w3.org/2000/svg&#x22; viewBox=&#x22;0 0 100 100&#x22; overflow=&#x22;visible&#x22; fill="{{ $state.fillColor }}" stroke="{{ $state.strokeColor }}"&#x3E;
-                      {{ $state.loaderSmil }} 
+                    &#x3C;defs&#x3E;
+                      {{ $state.loaderCurrentDef }}
+                    &#x3C;/defs&#x3E;  
+                     {{ $state.loaderSmil }} 
                     &#x3C;/svg&#x3E;
                   </code>
               </pre>
@@ -81,28 +84,15 @@
           </template>
           <div v-show="$state.codeActive === 'SASS'">
             <div class="code-styles">
-              <div v-show="$state.styleActive === 'spinner1'">
                 <pre>
-                <code class="language-scss" ref="stylesSpinner">@for $i from 1 to 13 {
-                    .loader:nth-of-type(#{$i}) * {
-                      animation: <span v-bind:key="`animationspinner${a}`" v-for="(animationspinner, a) in $state.loaderSassSpinner"> {{ animationspinner }}</span>
+                  <code class="language-css" ref="stylesLoaderSass">@for $i from 1 to {{$state.amount + 1}} {
+                      .loader:nth-of-type(#{$i}) <span v-show="$state.styleActive === 'spinner1'">*</span> { 
+                        animation: <span v-bind:key="`animationinline${z}`" v-for="(animationinline, z) in $state.loaderSass"> {{ animationinline }}</span>
+                      }
                     }
-                  }
-                  <span v-bind:key="`keyframesEffects${key}`" v-for="(ke, key) in $state.keyframesEffects">{{ ke }}</span>
-                </code>
-              </pre>
-              </div>
-              <div v-show="$state.styleActive === 'inline1'">
-                <pre>
-                <code class="language-css" ref="stylesInline">@for $i from 1 to 5 {
-                    .loader:nth-of-type(#{$i}) { 
-                      animation: <span v-bind:key="`animationinline${z}`" v-for="(animationinline, z) in $state.loaderSassInline"> {{ animationinline }}</span>
-                    }
-                  }
-                  <span v-bind:key="`keyframesEff${key}`" v-for="(ke, key) in $state.keyframesEffects">{{ ke }}</span>
-                </code>
-              </pre>
-              </div>
+                    <span v-bind:key="`keyframesEff${key}`" v-for="(ke, key) in $state.keyframesEffects">{{ ke }}</span>
+                  </code>
+                </pre>
               <button
                 type="button"
                 class="btn btn-copy"
@@ -213,11 +203,15 @@ export default {
       link.click();
     },
     smilClipboard() {
+      var sasscodepredef = this.$state.loaderCurrentDef;
       var smilcodepre = this.$state.loaderSmil;
       var fullsmillcode =
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" overflow="visible" fill="' +
         this.$state.fillColor + '" stroke="' +  this.$state.strokeColor +
         '">' +
+        "<defs>" +
+        sasscodepredef +
+        "</defs>" +
         smilcodepre +
         "</svg>";
       this.$state.copyText = "Copied!";
@@ -273,11 +267,15 @@ export default {
       }
     },
     holacodepenSmil() {
+      var sasscodepredef = this.$state.loaderCurrentDef;
       var smilcodepre = this.$state.loaderSmil;
       var codepenhtml =
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" overflow="visible" fill="' +
         this.$state.fillColor + '" stroke="' +  this.$state.strokeColor +
         '">' +
+        "<defs>" +
+        sasscodepredef +
+        "</defs>" +
         smilcodepre +
         "</svg>";
       var penArr = {
@@ -301,10 +299,13 @@ export default {
         "</defs>" +
         sasscodepre +
         "</svg>";
-      this.$state.styleCodePre = this.$state.stylesCode
+        this.$state.styleCodePre = this.$refs.stylesLoaderSass.innerHTML
+        .replaceAll(' <span style="display: none;">*', '')
+        .replaceAll('<span style="">', '')
         .replaceAll("<span>", "")
         .replaceAll("</span>", "");
       var codepencss = this.$state.styleCodePre;
+
       var penArr = {
         title: "Hola SVG Loader",
         html: codepenhtml,
@@ -362,6 +363,7 @@ h2 a {
   background-color: var(--bgColor);
   background-color: var(--siteBlue);
   border: 1px solid var(--borderColor);
+  color: var(--bgColor);
   cursor: pointer;
   font-family: "Montserrat";
   font-size: 1rem;

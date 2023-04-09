@@ -18,13 +18,14 @@
                 viewBox="0 0 100 100"
                 overflow="visible"
                 fill="#84c9d2"
-              />
+              >
+              </svg>
             </div>
             <button class="btn btn-custom" @click="$state.isActiveCustom = !$state.isActiveCustom">Custom</button>
             <textarea
               class="custom-shape"
               :class="{ active: $state.isActiveCustom }"
-              placeholder="paste your shape, <path>, or <text>!"
+              placeholder="paste your svg! or shape, <path> or <text>.."
               title='💡 TRY: <text y="20">💩</text>'
               v-model="$state.customShape"
               @input="disabledOp()"
@@ -48,15 +49,27 @@ export default {
                 this.$state.loaderCurrentDef = this.$state.shapes[i].svginline;
             }
             if (shapeid === "custom") {
+                const shapes = ["<path", "<text", "<svg", "<rect", "<circle", "<polyline", "<ellipse", "<line", "<polygon"];
+                const customShape = this.$state.customShape;
+
+                for (const shape of shapes) {
+                  const regex = new RegExp(`^${shape}`);
+                  
+                  if (regex.test(customShape)) {
+                    this.$state.customShape = customShape.replace(regex, `${shape} id="loader"`);
+                    break; // stop checking once a match is found
+                  }
+                }
                 this.$state.loaderCurrentDef = this.$state.customShape;
+
             }
-            }
+          }
         }
         this.$state.renderComponent = false;
         this.$nextTick(() => {
             this.$state.renderComponent = true;
         });
-        this.$getSmilCode();
+        // this.$getSmilCode();
         },
         disabledOp() {
             if (

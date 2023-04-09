@@ -2,7 +2,7 @@
   <div class="style-bar-box">
     <h3>Colors:</h3>
     <div class="flex-btw">
-      <label for="inputFillColor">Fill color</label>
+      <label for="inputFillColor">Fill</label>
       <input
         id="inputFillColor"
         type="color"
@@ -10,14 +10,16 @@
       />
     </div>
     <div class="flex-btw">
-      <label for="inputStrokeColor">Stroke color</label>
+      <label for="inputStrokeColor">Stroke</label>
       <input
         id="inputStrokeColor"
         type="color"
         v-model="$state.strokeColor"
       />
     </div>
+
   </div>
+
 </template>
 
 <script>

@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/codes","2":"components/effects","3":"components/fill-color","4":"components/footer","5":"components/loader-container","6":"components/shapes","7":"components/share","8":"components/styles","9":"pages/index"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/codes","2":"components/effects","3":"components/fill-color","4":"components/footer","5":"components/l2","6":"components/loader-container","7":"components/shapes","8":"components/share","9":"components/styles","10":"pages/index"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -1426,7 +1426,7 @@ var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vu
 
 
 
-const _2732e8a2 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 9).then(__webpack_require__.bind(null, 63)));
+const _2732e8a2 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 10).then(__webpack_require__.bind(null, 69)));
 
 const emptyFn = () => {};
 
@@ -2218,14 +2218,15 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Footer: () => __webpack_require__.e(/* import() | components/footer */ 4).then(__webpack_require__.bind(null, 35)).then(c => wrapFunctional(c.default || c)),
-  Codes: () => __webpack_require__.e(/* import() | components/codes */ 1).then(__webpack_require__.bind(null, 50)).then(c => wrapFunctional(c.default || c)),
-  Effects: () => __webpack_require__.e(/* import() | components/effects */ 2).then(__webpack_require__.bind(null, 54)).then(c => wrapFunctional(c.default || c)),
-  FillColor: () => __webpack_require__.e(/* import() | components/fill-color */ 3).then(__webpack_require__.bind(null, 52)).then(c => wrapFunctional(c.default || c)),
-  LoaderContainer: () => __webpack_require__.e(/* import() | components/loader-container */ 5).then(__webpack_require__.bind(null, 55)).then(c => wrapFunctional(c.default || c)),
-  Shapes: () => __webpack_require__.e(/* import() | components/shapes */ 6).then(__webpack_require__.bind(null, 53)).then(c => wrapFunctional(c.default || c)),
-  Share: () => __webpack_require__.e(/* import() | components/share */ 7).then(__webpack_require__.bind(null, 56)).then(c => wrapFunctional(c.default || c)),
-  Styles: () => __webpack_require__.e(/* import() | components/styles */ 8).then(__webpack_require__.bind(null, 51)).then(c => wrapFunctional(c.default || c))
+  Footer: () => __webpack_require__.e(/* import() | components/footer */ 4).then(__webpack_require__.bind(null, 36)).then(c => wrapFunctional(c.default || c)),
+  Codes: () => __webpack_require__.e(/* import() | components/codes */ 1).then(__webpack_require__.bind(null, 54)).then(c => wrapFunctional(c.default || c)),
+  Effects: () => __webpack_require__.e(/* import() | components/effects */ 2).then(__webpack_require__.bind(null, 59)).then(c => wrapFunctional(c.default || c)),
+  FillColor: () => __webpack_require__.e(/* import() | components/fill-color */ 3).then(__webpack_require__.bind(null, 56)).then(c => wrapFunctional(c.default || c)),
+  L2: () => __webpack_require__.e(/* import() | components/l2 */ 5).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
+  LoaderContainer: () => __webpack_require__.e(/* import() | components/loader-container */ 6).then(__webpack_require__.bind(null, 58)).then(c => wrapFunctional(c.default || c)),
+  Shapes: () => __webpack_require__.e(/* import() | components/shapes */ 7).then(__webpack_require__.bind(null, 57)).then(c => wrapFunctional(c.default || c)),
+  Share: () => __webpack_require__.e(/* import() | components/share */ 8).then(__webpack_require__.bind(null, 60)).then(c => wrapFunctional(c.default || c)),
+  Styles: () => __webpack_require__.e(/* import() | components/styles */ 9).then(__webpack_require__.bind(null, 55)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {
@@ -2432,7 +2433,7 @@ external_vue_default.a.component(nuxt_content.name, nuxt_content);
 });
 // CONCATENATED MODULE: ./plugins/globalObject.js
 
-const state = {
+var state = {
   exportedCode: {
     smil: "",
     sass: ""
@@ -2442,9 +2443,9 @@ const state = {
   fillColor: "#ff5463",
   strokeColor: "none",
   effectActive: ["opacity"],
-  computedAnimationBoth: [["1s 0.08s opacityLoader infinite"], ["1s 0.16s opacityLoader infinite"], ["1s 0.24s opacityLoader infinite"], ["1s 0.32s opacityLoader infinite"], ["1s 0.4s opacityLoader infinite"], ["1s 0.48s opacityLoader infinite"], ["1s 0.56s opacityLoader infinite"], ["1s 0.64s opacityLoader infinite"], ["1s 0.72s opacityLoader infinite"], ["1s 0.8s opacityLoader infinite"], ["1s 0.88s opacityLoader infinite"], ["1s 0.96s opacityLoader infinite"]],
-  loaderSassSpinner: ["1s $i * 0.08s opacityLoader infinite,"],
-  loaderSassInline: ["1s $i * 0.25s opacityLoader infinite,"],
+  computedAnimation: [["1s 0.125s opacityLoader infinite"], ["1s 0.25s opacityLoader infinite"], ["1s 0.375s opacityLoader infinite"], ["1s 0.5s opacityLoader infinite"], ["1s 0.625s opacityLoader infinite"], ["1s 0.75s opacityLoader infinite"], ["1s 0.875s opacityLoader infinite"], ["1s 1s opacityLoader infinite"]],
+  hola: [""],
+  loaderSass: ["1s $i * 0.125s opacityLoader infinite,"],
   keyframesEffects: ['@keyframes opacityLoader { to { opacity: 0; } }'],
   styleActive: "spinner1",
   shapeActive: "circle",
@@ -2452,11 +2453,12 @@ const state = {
   customShape: "",
   renderComponent: true,
   disabledSave: true,
-  loaderSmil: '<defs><circle id="spinner" r="4" cx="50" cy="50" transform="translate(0 -30)"></circle></defs> <use xlink:href="#spinner" transform="rotate(0 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(30 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.08s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(60 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.16s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(90 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.24s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(120 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.32s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(150 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.4s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(180 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.48s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(210 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.56s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(240 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.64s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(270 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.72s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(300 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.8s" repeatCount="indefinite"></animate></use><use xlink:href="#spinner" transform="rotate(330 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.88s" repeatCount="indefinite"></animate></use>',
+  loaderSmil: '<use xlink:href="#loader" transform="rotate(0 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(45 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.125s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(90 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.25s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(135 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.375s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(180 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.5s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(225 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.625s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(270 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.75s" repeatCount="indefinite"></animate></use><use xlink:href="#loader" transform="rotate(315 50 50)"><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.875s" repeatCount="indefinite"></animate></use>',
   loaderSmilActive: true,
   codeActive: "SMIL",
-  itemsNumer: 13,
-  stylesCode: "@for $i from 1 to 13 { .spinner-class:nth-of-type(#{$i}) { animation: 1s $i * 0.08s opacityLoader infinite, } }@keyframes opacityLoader { to { opacity: 0; } }",
+  itemsNumber: 9,
+  amount: 8,
+  stylesCode: "@for $i from 1 to 9 { .loader:nth-of-type(#{$i}) * { animation: 1s $i * 0.125s opacityLoader infinite, } }@keyframes opacityLoader { to { opacity: 0; } }",
   codes: [{
     id: "SMIL"
   }, {
@@ -2478,17 +2480,13 @@ const state = {
                 <use xlink:href="#spinner0" transform="rotate(300 50 50)" />\
                 <use xlink:href="#spinner0" transform="rotate(330 50 50)" />',
     use: '<use class="loader" xlink:href="#loader" transform="rotate(0 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(30 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(60 50 50)" />\
+                <use class="loader" xlink:href="#loader" transform="rotate(45 50 50)" />\
                 <use class="loader" xlink:href="#loader" transform="rotate(90 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(120 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(150 50 50)" />\
+                <use class="loader" xlink:href="#loader" transform="rotate(135 50 50)" />\
                 <use class="loader" xlink:href="#loader" transform="rotate(180 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(210 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(240 50 50)" />\
+                <use class="loader" xlink:href="#loader" transform="rotate(225 50 50)" />\
                 <use class="loader" xlink:href="#loader" transform="rotate(270 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(300 50 50)" />\
-                <use class="loader" xlink:href="#loader" transform="rotate(330 50 50)" />'
+                <use class="loader" xlink:href="#loader" transform="rotate(315 50 50)" />'
   }, {
     id: "inline1",
     svg: '<defs><circle id="inline0" cx="20" cy="50" r="6" /></defs>\
@@ -2534,56 +2532,47 @@ const state = {
     id: "opacity",
     value: true,
     keyframes: '@keyframes opacityLoader { to { opacity: 0; } }',
-    sassSpinner: "1s $i * 0.08s opacityLoader infinite,",
-    sassInline: "1s $i * 0.25s opacityLoader infinite,",
+    sassSpinner: "1s $i * 0.125s opacityLoader infinite,",
     css: "",
-    smilSpinner: '<animate attributeName="opacity" values="0;1;0" dur="1s" :begin="`${i * 0.08}s`" repeatCount="indefinite" />'
+    smilSpinner: '<animate attributeName="opacity" values="0;1;0" dur="1s" :begin="`${i * 0}s`" repeatCount="indefinite" />'
   }, {
     id: "translate",
     value: false,
     keyframes: "@keyframes translateLoader { to { transform: translateX(10px); } }",
-    sassSpinner: "1s $i * 0.08s translateLoader infinite,",
-    sassInline: "1s $i * 0.25s translateLoader infinite,",
+    sassSpinner: "1s $i * 0.125s translateLoader infinite,",
     css: "",
-    smilSpinner: '<animateTransform attributeName="transform" type="translate" additive="sum" from="0 0" to="10" dur="1s" :begin="`${i * 0.08}s`" repeatCount="indefinite" />'
+    smilSpinner: '<animateTransform attributeName="transform" type="translate" additive="sum" from="0 0" to="10" dur="1s" :begin="`${i * 0}s`" repeatCount="indefinite" />'
   }, {
     id: "scale",
     value: false,
     keyframes: "@keyframes scaleLoader { from { transform: scale(0); } to { transform: scale(1.2); } }",
-    sassSpinner: "1s $i * 0.08s scaleLoader infinite,",
-    sassInline: "1s $i * 0.25s scaleLoader infinite,",
+    sassSpinner: "1s $i * 0.125s scaleLoader infinite,",
     css: "",
-    smilSpinner: '<animateTransform attributeName="transform" type="scale" additive="sum" from="0" to="1" dur="1s" :begin="`${i * 0.08}s`" repeatCount="indefinite" />'
+    smilSpinner: '<animateTransform attributeName="transform" type="scale" additive="sum" from="0" to="1" dur="1s" :begin="`${i * 0}s`" repeatCount="indefinite" />'
   }, {
-    id: "skew",
+    id: "skewX",
     value: false,
     keyframes: "@keyframes skewLoader { to { transform: skew(20deg); } }",
-    sassSpinner: "1s $i * 0.08s skewLoader infinite,",
-    sassInline: "1s $i * 0.25s skewLoader infinite,",
+    sassSpinner: "1s $i * 0.125s skewLoader infinite,",
     css: "",
-    smilSpinner: '<animateTransform attributeName="transform" type="skewX" additive="sum" from="0" to="20" dur="1s" :begin="`${i * 0.08}s`" repeatCount="indefinite" />'
+    smilSpinner: '<animateTransform attributeName="transform" type="skewX" additive="sum" from="0" to="20" dur="1s" :begin="`${i * 0}s`" repeatCount="indefinite" />'
   }, {
     id: "rotate",
     value: false,
     keyframes: "@keyframes rotateLoader { to { transform: rotate(360deg); } }",
-    sassSpinner: "1s $i * 0.08s rotateLoader infinite,",
-    sassInline: "1s $i * 0.25s rotateLoader infinite,",
+    sassSpinner: "1s $i * 0.125s rotateLoader infinite,",
     css: "",
-    smilSpinner: '<animateTransform attributeName="transform" type="rotate" additive="sum" from="0 80 90" :to="`360 ${i * 3} 10`" dur="1s" :begin="`${i * 0.08}`" repeatCount="indefinite" />'
+    smilSpinner: '<animateTransform attributeName="transform" type="rotate" additive="sum" from="0 80 90" :to="`360 ${i * 3} 10`" dur="1s" :begin="`${i * 0}`" repeatCount="indefinite" />'
   }],
   loaderCurrentDef: '<circle id="loader" r="4" cx="50" cy="50" transform="translate(0 -30)"/>',
   loaderCurrent: '<g class="loader" transform="rotate(0 50 50)"><use xlink:href="#loader"/></g>\
-          <g class="loader" transform="rotate(30 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(60 50 50)"><use xlink:href="#loader" /></g>\
+          <g class="loader" transform="rotate(45 50 50)"><use xlink:href="#loader" /></g>\
           <g class="loader" transform="rotate(90 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(120 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(150 50 50)"><use xlink:href="#loader" /></g>\
+          <g class="loader" transform="rotate(135 50 50)"><use xlink:href="#loader" /></g>\
           <g class="loader" transform="rotate(180 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(210 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(240 50 50)"><use xlink:href="#loader" /></g>\
+          <g class="loader" transform="rotate(225 50 50)"><use xlink:href="#loader" /></g>\
           <g class="loader" transform="rotate(270 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(300 50 50)"><use xlink:href="#loader" /></g>\
-          <g class="loader" transform="rotate(330 50 50)"><use xlink:href="#loader"/></g>'
+          <g class="loader" transform="rotate(315 50 50)"><use xlink:href="#loader" /></g>'
 };
 
 function getSmilCode() {
@@ -2605,62 +2594,207 @@ function setEffect(effectid) {
     for (let i = 0; i < this.$state.effectActive.length; i++) {
       if (effectid === this.$state.effectActive[i]) {
         this.$state.effectActive.splice(i, 1);
-        this.$state.loaderSassSpinner.splice(i, 1);
-        this.$state.loaderSassInline.splice(i, 1);
+        this.$state.loaderSass.splice(i, 1);
         this.$state.keyframesEffects.splice(i, 1);
+        state.computedAnimation = [];
 
-        for (let ef = 0; ef < this.$state.computedAnimationBoth.length; ef++) {
-          for (let efe = 0; efe < this.$state.computedAnimationBoth[ef].length; efe++) {
-            if (this.$state.computedAnimationBoth[ef][efe].includes(`${effectid}Loader`)) {
-              this.$state.computedAnimationBoth[ef].splice(efe, 1);
-            }
-          }
+        for (let i = 1; i <= state.amount; i++) {
+          const newLine = state.effectActive.map(effect => {
+            const delay = i / state.amount;
+            return `1s ${delay}s ${effect}Loader infinite`;
+          });
+          state.computedAnimation.splice(i - 1, 0, newLine);
         }
+
+        this.$state.loaderSmil = '';
+
+        for (let lm = 1; lm <= this.$state.amount; lm++) {
+          const use = `<use xlink:href="#loader" transform="rotate(${(lm * 360 / this.$state.amount).toFixed()} 50 50)">`;
+          const newSmilLine = [];
+
+          for (let i = 0; i < this.$state.effectActive.length; i++) {
+            const effect = this.$state.effectActive[i];
+            const delaybe = lm / this.$state.amount;
+            let animation;
+
+            if (effect === "opacity") {
+              animation = `<animate attributeName="${effect}" values="0;1;0" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
+            }
+
+            if (effect === "translate") {
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 0" to="10"></animateTransform>`;
+            }
+
+            if (effect === "rotate") {
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 50 50" to="360 0 0"></animateTransform>`;
+            }
+
+            if (effect === "scale") {
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
+            }
+
+            if (effect === "skewX") {
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="20"></animateTransform>`;
+            }
+
+            newSmilLine.splice(i, 0, animation);
+          }
+
+          const smilString = newSmilLine.join('');
+          this.$state.loaderSmil += use + smilString + "</use>";
+        }
+
+        ;
       }
     }
   } else {
     this.$state.effectActive.push(effectid);
     this.$state.effects.forEach(function (obj, i) {
       if (effectid === obj.id) {
-        this.$state.loaderSassSpinner.push(obj.sassSpinner);
-        this.$state.loaderSassInline.push(obj.sassInline);
         this.$state.keyframesEffects.push(obj.keyframes);
+        state.computedAnimation = [];
 
-        for (let ee = 1; ee < this.$state.itemsNumer; ee++) {
-          if (this.$state.styleActive === "inline1") {
-            this.$state.computedAnimationBoth[ee - 1].push(`1s ${ee * 0.25}s ${effectid}Loader infinite`);
-          }
-
-          if (this.$state.styleActive === "spinner1") {
-            this.$state.computedAnimationBoth[ee - 1].push(`1s ${ee * 0.08}s ${effectid}Loader infinite`);
-          }
+        for (let i = 1; i <= state.amount; i++) {
+          const newLine = state.effectActive.map(effect => {
+            const delay = i / state.amount;
+            return `1s ${delay}s ${effect}Loader infinite`;
+          });
+          state.computedAnimation.push(newLine);
         }
+
+        this.$state.loaderSass = [];
+
+        for (let ls = 0; ls < state.effectActive.length; ls++) {
+          this.$state.loaderSass.push(`1s $i * ${(1 / state.amount).toFixed(2)}s ${state.effectActive[ls]}Loader infinite,`);
+        }
+
+        this.$state.loaderSmil = '';
+
+        for (let lm = 1; lm <= this.$state.amount; lm++) {
+          if (this.$state.styleActive === "spinner1") {
+            var use = `<use xlink:href="#loader" transform="rotate(${(lm * 360 / this.$state.amount).toFixed()} 50 50)">`;
+          }
+
+          if (this.$state.styleActive === "inline1") {
+            var use = `<use xlink:href="#loader" x="${(100 / 2 - (this.$state.amount - 1) * 16 / 2 + (lm - 1) * 16).toFixed()}">`;
+          }
+
+          const newSmilLine = this.$state.effectActive.map(effect => {
+            const delaybe = lm / this.$state.amount;
+
+            if (effect === "opacity") {
+              return `<animate attributeName="${effect}" values="0;1;0" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
+            }
+
+            if (effect === "translate") {
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 0" to="10"></animateTransform>`;
+            }
+
+            if (effect === "rotate") {
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 50 50" to="360 0 0"></animateTransform>`;
+            }
+
+            if (effect === "scale") {
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
+            }
+
+            if (effect === "skewX") {
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="20"></animateTransform>`;
+            }
+          }).join('');
+          this.$state.loaderSmil += use + newSmilLine + "</use>";
+        }
+
+        ;
       }
     }, this);
   }
 
-  if (this.$state.codeActive === "SASS") {
-    var codeActiveReset = this.$state.codeActive;
-    this.$state.codeActive = '';
+  if (this.$state.effectActive.length === 0) {
+    this.$state.loaderSass.push(`none`);
+  }
+}
+
+function loaderCurrentFunction() {
+  this.$state.loaderCurrent = '';
+
+  for (let nd = 1; nd < this.$state.amount + 1; nd++) {
+    if (this.$state.styleActive === "spinner1") {
+      this.$state.loaderCurrent += `<g class="loader" transform="rotate(${(nd * 360 / this.$state.amount).toFixed()} 50 50)"><use xlink:href="#loader" /></g>`;
+    }
+
+    if (this.$state.styleActive === "inline1") {
+      this.$state.loaderCurrent += `<use xlink:href="#loader" class="loader" x="${(100 / 2 - (this.$state.amount - 1) * 16 / 2 + (nd - 1) * 16).toFixed()}" />`;
+    }
+  }
+}
+
+function loaderSmilFunction() {
+  this.$state.loaderSmil = '';
+
+  for (let lm = 1; lm <= this.$state.amount; lm++) {
+    if (this.$state.styleActive === "spinner1") {
+      var use = `<use xlink:href="#loader" transform="rotate(${(lm * 360 / this.$state.amount).toFixed()} 50 50)">`;
+    }
+
+    if (this.$state.styleActive === "inline1") {
+      var use = `<use xlink:href="#loader" x="${(100 / 2 - (this.$state.amount - 1) * 16 / 2 + (lm - 1) * 16).toFixed()}">`;
+    }
+
+    const newSmilLine = this.$state.effectActive.map(effect => {
+      const delaybe = lm / this.$state.amount;
+
+      if (effect === "opacity") {
+        return `<animate attributeName="${effect}" values="0;1;0" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
+      } else {
+        return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
+      }
+    }).join('');
+    this.$state.loaderSmil += use + newSmilLine + "</use>";
   }
 
-  this.$nextTick(() => {
-    if (this.$state.styleActive === "inline1" && codeActiveReset === "SASS") {
-      this.$state.stylesCode = this.$parent.$refs.stylesInline.innerHTML;
-      this.$state.codeActive = codeActiveReset;
-    }
-
-    if (this.$state.styleActive === "spinner1" && codeActiveReset === "SASS") {
-      this.$state.stylesCode = this.$parent.$refs.stylesSpinner.innerHTML;
-      this.$state.codeActive = codeActiveReset;
-    }
-  });
+  ;
 }
+
+function loaderSassFunction() {
+  this.$state.loaderSass = [];
+
+  for (let ls = 0; ls < this.$state.effectActive.length; ls++) {
+    this.$state.loaderSass.push(`1s $i * ${(1 / this.$state.amount).toFixed(2)}s ${this.$state.effectActive[ls]}Loader infinite,`);
+  }
+}
+
+function computedAnimationFunction() {
+  this.$state.computedAnimation = [];
+
+  for (let i = 1; i <= this.$state.amount; i++) {
+    const newLine = this.$state.effectActive.map(effect => {
+      const delay = i / this.$state.amount;
+      return `1s ${delay}s ${effect}Loader infinite`;
+    });
+    this.$state.computedAnimation.push(newLine);
+  }
+} // function updateAnimation() {
+// state.computedAnimation = []
+//   for (let am = 1; am < state.amount +1 ; am++) {
+//     let newLine = []
+//     for (let ea = 0; ea < state.effectActive.length; ea++) {
+//       newLine.push([`1s ${(am / state.amount)}s ${state.effectActive[ea]}Loader infinite`])
+//     }
+//     state.computedAnimation.push(newLine)
+//     console.log(newLine)
+//   }
+// }
+
 
 /* harmony default export */ var globalObject = (({
   app
 }, inject) => {
   inject('state', external_vue_default.a.observable(state)), inject('getSmilCode', external_vue_default.a.observable(getSmilCode));
+  inject('loaderCurrentFunction', external_vue_default.a.observable(loaderCurrentFunction));
+  inject('loaderSmilFunction', external_vue_default.a.observable(loaderSmilFunction));
+  inject('loaderSassFunction', external_vue_default.a.observable(loaderSassFunction));
+  inject('computedAnimationFunction', external_vue_default.a.observable(computedAnimationFunction));
   inject('setEffect', external_vue_default.a.observable(setEffect));
 });
 // CONCATENATED MODULE: ./.nuxt/index.js
