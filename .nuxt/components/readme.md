@@ -10,7 +10,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Codes>` | `<codes>` (components/Codes.vue)
 - `<Effects>` | `<effects>` (components/Effects.vue)
 - `<FillColor>` | `<fill-color>` (components/FillColor.vue)
-- `<L2>` | `<l2>` (components/L2.vue)
 - `<LoaderContainer>` | `<loader-container>` (components/LoaderContainer.vue)
 - `<Shapes>` | `<shapes>` (components/Shapes.vue)
 - `<Share>` | `<share>` (components/Share.vue)

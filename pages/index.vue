@@ -387,6 +387,7 @@ h2 a {
   .style-bar-box {
     border: 4px solid var(--borderColor);
     flex: 1 1 50%;
+    &.box-colors { min-width: 160px; }
     &.effects { flex: 100%; }
     &.active,
     &:hover,
@@ -577,7 +578,7 @@ h2 a {
 @keyframes rotateLoader {
   to { transform: rotate(360deg); }
 }
-@keyframes skewLoader {
+@keyframes skewXLoader {
   to { transform: skewX(20deg); }
 }
 @keyframes matrixLoader {

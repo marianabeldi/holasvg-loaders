@@ -140,7 +140,7 @@ var state = {
           {
             id: "skewX",
             value: false,
-            keyframes: "@keyframes skewLoader { to { transform: skew(20deg); } }",
+            keyframes: "@keyframes skewXLoader { to { transform: skew(20deg); } }",
             sassSpinner: "1s $i * 0.125s skewLoader infinite,",
             css: "",
             smilSpinner: '<animateTransform attributeName="transform" type="skewX" additive="sum" from="0" to="20" dur="1s" :begin="`${i * 0}s`" repeatCount="indefinite" />'

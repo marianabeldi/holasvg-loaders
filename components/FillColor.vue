@@ -1,5 +1,5 @@
 <template>
-  <div class="style-bar-box">
+  <div class="style-bar-box box-colors">
     <h3>Colors:</h3>
     <div class="flex-btw">
       <label for="inputFillColor">Fill</label>

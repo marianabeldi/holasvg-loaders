@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <b class="top"></b>
+    <b class="top">{{ headerText }}</b>
     <Nuxt />
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      headerText: "Version 1.0 ✨",
+      headerText: "Version 1.2 is out ✨",
     }
   }
 }
@@ -50,13 +50,10 @@ html {
   box-sizing: border-box;
 }
 .top {
-  background-color: var(--siteRed);
+  background-color: var(--siteLightblue);
   border-bottom: 1px solid var(--borderColor);
-  height: .5rem;
+  color: var(--bgColor);
   width: 100%;
-  .loaders-page & {
-    background-color: var(--siteLightblue);
-  }
 }
 body {
   background-color: var(--bgColor);
