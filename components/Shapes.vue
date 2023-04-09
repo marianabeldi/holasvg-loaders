@@ -32,6 +32,7 @@
               required
             ></textarea>
             <button class="btn custom-shape-btn" :class="{ active: $state.isActiveCustom }" type="submit" @click="setShape('custom')" :disabled="$state.disabledSave">Save</button>
+            <p class="info-text" :class="{ active: !$state.disabledSave }" type="submit">💡 If your text gets cropped, try adding <b>y="20"</b> or <b>alignment-baseline="before-edge"</b></p>
           </div>
         </div>
 </template>
@@ -108,6 +109,7 @@ export default {
 }
 .custom-shape-btn {
   background-color: var(--siteLightblue);
+  border: 1px solid var(--siteLightblue);
   color: var(--bgColor);
   display: none;
   margin-top: 0.5rem;
@@ -115,10 +117,44 @@ export default {
   &.active { display: block; }
   &:hover { background-color: var(--siteGreen); }
   &:disabled {
+    background-color: #49727c;
+    border: 1px solid #49727c;
     cursor: not-allowed;
-    opacity: 0.5;
-    &:hover { background-color: var(--siteLightblue); }
+    position: relative;
+    &:hover { 
+      background-color: #49727c;
+      border: 1px solid #49727c;
+      &::after {
+        background: var(--siteYellow);
+        border: 1px solid var(--siteYellow);
+        content: "invalid svg code";
+        color: var(--bgColor);
+        font-size: .9rem;
+        display: block;
+        opacity: 1;
+        position: absolute;
+        top: -50%;
+        left: -1px;
+        width: calc(100% + 2px);
+        z-index: 2;
+      }
+    }
   }
+}
+.info-text {
+  display: none;
+  background: var(--bgLighter);
+  border: 1px solid var(--siteYellow);
+  border-radius: 2px;
+  color: var(--textColor);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  padding: 6px 10px 7px;
+  z-index: 1;
+  b { color: var(--siteYellow); font-weight: 500;}
+  &.active { display: block; }
 }
 .btn-custom {
   background-color: transparent;
