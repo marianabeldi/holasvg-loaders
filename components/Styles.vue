@@ -26,7 +26,7 @@
       </div>
       <div class="duration-input">
         <label for="duration">Duration:</label>
-        <input type="number" id="inputDuration" name="inputDuration" min="0" max="100" @input="changeDuration($event)" v-model="$state.duration"/>s
+        <input type="number" id="inputDuration" name="inputDuration" min="0" max="99" @input="changeDuration($event)" v-model="$state.duration"/>s
       </div>
     </div>
   </div>
@@ -152,5 +152,18 @@ input[type="range"]::-webkit-slider-thumb {
     background: #ff5463;
     background: #84c9d2;
   }
+}
+
+.duration-input input {
+    border-radius: 4px;
+    border: 0;
+    border: 1px solid var(--bgLighter);
+    font-size: 1.1rem;
+    margin-right: 2px;
+    min-height: 40px;
+    padding: 0 0 0 6px;
+    &:focus {
+      background-color: var(--siteYellow);
+    }
 }
 </style>
