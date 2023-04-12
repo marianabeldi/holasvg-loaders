@@ -53,6 +53,11 @@ export default {
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': 'ca-pub-6891714364460101',
         async: true
+      },
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6891714364460101',
+        async: true,
+        crossorigin: 'anonymous'
       }
     ]
   },

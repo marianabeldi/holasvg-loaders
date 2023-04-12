@@ -236,8 +236,11 @@ export default {
     },
     stylesClipboard() {
       this.$state.styleCodePre = this.$state.stylesCode
-        .replaceAll("<span>", "")
-        .replaceAll("</span>", "");
+      .replaceAll(' <span style="display: none;">*', '')
+      .replaceAll('<span style="">', '')
+      .replaceAll("<span>", "")
+      .replaceAll("</span>", "")
+      .replaceAll(/<span class="token [^"]*">/g, '');
       var fullStyleCode = this.$state.styleCodePre;
       this.$state.copyText = "Copied!";
       setTimeout(() => (this.$state.copyText = "Copy"), 1000);
@@ -303,9 +306,9 @@ export default {
         .replaceAll(' <span style="display: none;">*', '')
         .replaceAll('<span style="">', '')
         .replaceAll("<span>", "")
-        .replaceAll("</span>", "");
+        .replaceAll("</span>", "")
+        .replaceAll(/<span class="token [^"]*">/g, '');
       var codepencss = this.$state.styleCodePre;
-
       var penArr = {
         title: "Hola SVG Loader",
         html: codepenhtml,

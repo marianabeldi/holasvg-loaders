@@ -22,7 +22,11 @@
       </div>
       <div class="range-input">
         <label for="amount">Amount:</label>
-        <input type="range" id="inputAmount" name="inputAmount" @input="changeAmount($event)" v-model="$state.amount" min="1" max="12" />
+        <input type="range" id="inputAmount" name="inputAmount" min="1" max="12" @input="changeAmount($event)" v-model="$state.amount" />
+      </div>
+      <div class="duration-input">
+        <label for="duration">Duration:</label>
+        <input type="number" id="inputDuration" name="inputDuration" min="0" max="100" @input="changeDuration($event)" v-model="$state.duration"/>s
       </div>
     </div>
   </div>
@@ -44,6 +48,17 @@ export default {
 
       this.$loaderSassFunction();
 
+    },
+    changeDuration(e) {
+      this.$state.duration = 0;
+      this.$state.duration = parseInt(e.target.value);
+      this.$computedAnimationFunction(); 
+
+this.$loaderCurrentFunction();
+
+this.$loaderSmilFunction();
+
+this.$loaderSassFunction();
     },
     setStyle(styleid) {
       this.$state.styleActive = styleid;

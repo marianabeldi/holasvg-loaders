@@ -25,6 +25,7 @@ var state = {
         codeActive: "SMIL",
         itemsNumber: 9,
         amount: 8,
+        duration: 1,
         stylesCode: "@for $i from 1 to 9 { .loader:nth-of-type(#{$i}) * { animation: 1s $i * 0.125s opacityLoader infinite, } }@keyframes opacityLoader { to { opacity: 0; } }",
         codes: [
           {
@@ -166,19 +167,18 @@ var state = {
           <g class="loader" transform="rotate(315 50 50)"><use xlink:href="#loader" /></g>',   
 }
 
-function getSmilCode() {
-
-  this.$nextTick(() => {
-    if (this.$state.styleActive === "spinner1") {
-      this.$state.loaderSmil = document.getElementById('spinnerLoaderRef').innerHTML
-      this.$state.loaderSmil = this.$state.loaderSmil.replaceAll('<!---->', '').replaceAll('normal none running', '')
-    }
-    if (this.$state.styleActive === "inline1") {
-      this.$state.loaderSmil = document.getElementById('inlineLoaderRef').innerHTML
-      this.$state.loaderSmil = this.$state.loaderSmil.replaceAll('<!---->', '').replaceAll('normal none running', '')
-    }
-  });
-}
+// function getSmilCode() {
+//   this.$nextTick(() => {
+//     if (this.$state.styleActive === "spinner1") {
+//       this.$state.loaderSmil = document.getElementById('spinnerLoaderRef').innerHTML
+//       this.$state.loaderSmil = this.$state.loaderSmil.replaceAll('<!---->', '').replaceAll('normal none running', '')
+//     }
+//     if (this.$state.styleActive === "inline1") {
+//       this.$state.loaderSmil = document.getElementById('inlineLoaderRef').innerHTML
+//       this.$state.loaderSmil = this.$state.loaderSmil.replaceAll('<!---->', '').replaceAll('normal none running', '')
+//     }
+//   });
+// }
 
 function setEffect(effectid) {
   if (this.$state.effectActive.includes(effectid)) {
@@ -191,8 +191,8 @@ function setEffect(effectid) {
         state.computedAnimation = [];
         for (let i = 1; i <= state.amount; i++) {
           const newLine = state.effectActive.map(effect => {
-            const delay = i / state.amount;
-            return `1s ${delay}s ${effect}Loader infinite`;
+            const delay = i / state.amount * state.duration;
+            return `${state.duration}s ${delay}s ${effect}Loader infinite`;
           });
           state.computedAnimation.splice(i - 1, 0, newLine);
         }
@@ -203,22 +203,22 @@ function setEffect(effectid) {
           const newSmilLine = [];
           for (let i = 0; i < this.$state.effectActive.length; i++) {
             const effect = this.$state.effectActive[i];
-            const delaybe = lm / this.$state.amount;
+            const delaybe = lm / this.$state.amount * this.state.duration;
             let animation;
             if (effect === "opacity") {
-              animation = `<animate attributeName="${effect}" values="0;1;0" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
+              animation = `<animate attributeName="${effect}" values="0;1;0" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
             }
             if (effect === "translate") {
-              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 0" to="10"></animateTransform>`;
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 0" to="10"></animateTransform>`;
             }
             if (effect === "rotate") {
-              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 50 50" to="360 0 0"></animateTransform>`;
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 50 50" to="360 0 0"></animateTransform>`;
             }
             if (effect === "scale") {
-              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
             }
             if (effect === "skewX") {
-              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="20"></animateTransform>`;
+              animation = `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="20"></animateTransform>`;
             }
             newSmilLine.splice(i, 0, animation);
           }
@@ -237,15 +237,15 @@ function setEffect(effectid) {
         state.computedAnimation = [];
         for (let i = 1; i <= state.amount; i++) {
           const newLine = state.effectActive.map(effect => {
-            const delay = i / state.amount;
-            return `1s ${delay}s ${effect}Loader infinite`;
+            const delay = i / state.amount * state.duration;
+            return `${state.duration}s ${delay}s ${effect}Loader infinite`;
           });
           state.computedAnimation.push(newLine);
         }     
 
         this.$state.loaderSass = [];
         for (let ls = 0; ls < state.effectActive.length; ls++) {
-          this.$state.loaderSass.push(`1s $i * ${(1 / state.amount).toFixed(2)}s ${state.effectActive[ls]}Loader infinite,`)
+          this.$state.loaderSass.push(`${state.duration}s $i * ${(1 / state.amount * state.duration).toFixed(2)}s ${state.effectActive[ls]}Loader infinite,`)
         }
 
         this.$state.loaderSmil = '';
@@ -256,21 +256,21 @@ function setEffect(effectid) {
             var use = `<use xlink:href="#loader" x="${((100/2)-(this.$state.amount-1)*16/2+(lm-1)*16).toFixed()}">`;
           }
           const newSmilLine = this.$state.effectActive.map(effect => {
-          const delaybe = lm / this.$state.amount;
+          const delaybe = lm / this.$state.amount * state.duration;;
             if (effect === "opacity") {
-              return `<animate attributeName="${effect}" values="0;1;0" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
+              return `<animate attributeName="${effect}" values="0;1;0" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`;
             }
             if (effect === "translate") {
-              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 0" to="10"></animateTransform>`;
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 0" to="10"></animateTransform>`;
             }
             if (effect === "rotate") {
-              return`<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 50 50" to="360 0 0"></animateTransform>`;
+              return`<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0 50 50" to="360 0 0"></animateTransform>`;
             }
             if (effect === "scale") {
-              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`;
             }
             if (effect === "skewX") {
-              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="20"></animateTransform>`;
+              return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="20"></animateTransform>`;
             }
         }).join('')
           this.$state.loaderSmil += use + newSmilLine + "</use>"
@@ -304,11 +304,11 @@ function loaderSmilFunction() {
       var use = `<use xlink:href="#loader" x="${((100/2)-(this.$state.amount-1)*16/2+(lm-1)*16).toFixed()}">`;
     }
     const newSmilLine = this.$state.effectActive.map(effect => {
-    const delaybe = lm / this.$state.amount;
+    const delaybe = lm / this.$state.amount * state.duration;
     if (effect === "opacity") {
-      return `<animate attributeName="${effect}" values="0;1;0" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`
+      return `<animate attributeName="${effect}" values="0;1;0" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite"></animate>`
     } else {
-      return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="1s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`
+      return `<animateTransform attributeName="transform" type="${effect}" additive="sum" dur="${state.duration}s" begin="${delaybe.toFixed(2)}s" repeatCount="indefinite" from="0" to="1.2"></animateTransform>`
     }
   }).join('')
     this.$state.loaderSmil += use + newSmilLine + "</use>"
@@ -318,7 +318,7 @@ function loaderSmilFunction() {
 function loaderSassFunction() {
   this.$state.loaderSass = [];
   for (let ls = 0; ls < this.$state.effectActive.length; ls++) {
-    this.$state.loaderSass.push(`1s $i * ${(1 / this.$state.amount).toFixed(2)}s ${this.$state.effectActive[ls]}Loader infinite,`)
+    this.$state.loaderSass.push(`${state.duration}s $i * ${(1 / this.$state.amount * state.duration).toFixed(2)}s ${this.$state.effectActive[ls]}Loader infinite,`)
   }
   
 }
@@ -327,8 +327,8 @@ function computedAnimationFunction() {
   this.$state.computedAnimation = [];
   for (let i = 1; i <= this.$state.amount; i++) {
     const newLine = this.$state.effectActive.map(effect => {
-      const delay = i / this.$state.amount;
-      return `1s ${delay}s ${effect}Loader infinite`;
+      const delay = i / this.$state.amount * state.duration;
+      return `${state.duration}s ${delay}s ${effect}Loader infinite`;
     });
     this.$state.computedAnimation.push(newLine);
   }
@@ -348,7 +348,7 @@ function computedAnimationFunction() {
 
 export default ({ app }, inject) => {
     inject('state', Vue.observable(state)),
-    inject('getSmilCode', Vue.observable(getSmilCode))
+    // inject('getSmilCode', Vue.observable(getSmilCode))
     inject('loaderCurrentFunction', Vue.observable(loaderCurrentFunction))
     inject('loaderSmilFunction', Vue.observable(loaderSmilFunction))
     inject('loaderSassFunction', Vue.observable(loaderSassFunction))
